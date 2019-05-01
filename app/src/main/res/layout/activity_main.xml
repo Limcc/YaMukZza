@@ -7,59 +7,93 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/frame_container"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <!--프래그먼트 들어올 자리-->
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+        <FrameLayout
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <!--프래그먼트 들어올 자리-->
 
-            <Button
-                android:id="@+id/bt_frag1"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="68dp"
-                android:background="#ff656c"
-                android:text="@string/f5"
-                android:textColor="@color/textColor" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/bt_frag2"
-                android:layout_width="100dp"
-                android:layout_height="68dp"
-                android:background="#ff656c"
-                android:text="@string/f2"
-                android:textColor="@color/textColor"/>
+                <Button
+                    android:id="@+id/bt_frag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="68dp"
+                    android:background="#ff656c"
+                    android:text="@string/f5"
+                    android:textColor="@color/textColor" />
 
-            <Button
-                android:id="@+id/bt_frag3"
-                android:layout_width="100dp"
-                android:layout_height="68dp"
-                android:background="#ff656c"
-                android:text="@string/f3"
-                android:textColor="@color/textColor"/>
+                <Button
+                    android:id="@+id/bt_frag2"
+                    android:layout_width="100dp"
+                    android:layout_height="68dp"
+                    android:background="#ff656c"
+                    android:text="@string/f2"
+                    android:textColor="@color/textColor" />
 
-            <Button
-                android:id="@+id/bt_frag4"
-                android:layout_width="100dp"
-                android:layout_height="68dp"
-                android:background="#ff656c"
-                android:text="@string/f4"
-                android:textColor="@color/textColor"/>
+                <Button
+                    android:id="@+id/bt_frag3"
+                    android:layout_width="100dp"
+                    android:layout_height="68dp"
+                    android:background="#ff656c"
+                    android:text="@string/f3"
+                    android:textColor="@color/textColor" />
 
-            <Button
-                android:id="@+id/bt_frag5"
-                android:layout_width="100dp"
-                android:layout_height="68dp"
-                android:background="#ff656c"
-                android:text="@string/f1"
-                android:textColor="@color/textColor"/>
+                <Button
+                    android:id="@+id/bt_frag4"
+                    android:layout_width="100dp"
+                    android:layout_height="68dp"
+                    android:background="#ff656c"
+                    android:text="@string/f4"
+                    android:textColor="@color/textColor" />
 
-        </LinearLayout>
-    </FrameLayout>
+                <Button
+                    android:id="@+id/bt_frag5"
+                    android:layout_width="100dp"
+                    android:layout_height="68dp"
+                    android:background="#ff656c"
+                    android:text="@string/f1"
+                    android:textColor="@color/textColor" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="101dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="192dp"
+                    android:layout_marginLeft="192dp"
+                    android:gravity="center"
+                    android:text="야먹자"
+                    android:textColor="@color/textColor"
+                    android:textSize="25dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="5dp" />
+            </android.support.constraint.ConstraintLayout>
+        </FrameLayout>
+    </android.support.constraint.ConstraintLayout>
+
 </LinearLayout>
