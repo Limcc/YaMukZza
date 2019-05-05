@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">야먹자</string>
+    <string name="kakao_app_key">065901b17ba9cf1c7eb50ca0b1cbefe1</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -8,6 +9,7 @@
     <string name="f3">SEARCH</string>
     <string name="f4">MYPAGE</string>
     <string name="f5">MAIN</string>
+    <string name="basket_list">basket_list</string>
 
 
 </resources>

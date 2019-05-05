@@ -91,7 +91,8 @@
                     android:textColor="@color/textColor"
                     android:textSize="25dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="5dp" />
+                    tools:layout_editor_absoluteY="5dp"
+                    tools:ignore="MissingConstraints" />
             </android.support.constraint.ConstraintLayout>
         </FrameLayout>
     </android.support.constraint.ConstraintLayout>
