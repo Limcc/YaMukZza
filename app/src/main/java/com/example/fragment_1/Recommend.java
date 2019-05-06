@@ -6,10 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Fragment5 extends Fragment {
+public class Recommend extends Fragment {
 
-    public static Fragment5 newnstance(){
-        return new Fragment5();
+    public static Recommend newnstance(){
+        return new Recommend();
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

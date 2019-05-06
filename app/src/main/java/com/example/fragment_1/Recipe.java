@@ -6,15 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Fragment3 extends Fragment {
-
-    public static Fragment3 newnstance(){
-        return new Fragment3();
+public class Recipe extends Fragment {
+    public static Recipe newnstance(){
+        return new Recipe();
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.search, container, false);
+        return inflater.inflate(R.layout.recipe, container, false);
     }
+
 }

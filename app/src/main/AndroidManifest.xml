@@ -30,7 +30,7 @@
         <!--로딩화면-->
         <activity android:name=".LoadingActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-        <activity android:name=".BasketList"></activity>
+
     </application>
 
 

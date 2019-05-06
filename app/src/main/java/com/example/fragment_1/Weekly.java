@@ -6,15 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Fragment1 extends Fragment {
-    public static Fragment1 newnstance(){
-        return new Fragment1();
+public class Weekly extends Fragment {
+    public static Weekly newnstance(){
+        return new Weekly();
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.main, container, false);
+        return inflater.inflate(R.layout.weekely, container, false);
     }
 
 }

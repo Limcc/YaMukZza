@@ -6,15 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Fragment2_1 extends Fragment {
-    public static Fragment2_1 newnstance(){
-        return new Fragment2_1();
+public class Board extends Fragment {
+    public static Board newnstance(){
+        return new Board();
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.recipe, container, false);
+        return inflater.inflate(R.layout.board, container, false);
     }
 
 }

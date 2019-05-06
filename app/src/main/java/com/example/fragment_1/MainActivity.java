@@ -23,7 +23,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bt_frag1, bt_frag2, bt_frag3, bt_frag4, bt_frag5;
+    Button bt_frag1, bt_frag2, bt_frag3, bt_frag4, bt_frag5, bt_frag6, bt_frag7;
 
     PackageInstaller.SessionCallback callback;
 
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //loading
         Intent intent = new Intent(this, LoadingActivity.class);
         startActivity(intent);
@@ -47,8 +48,10 @@ public class MainActivity extends AppCompatActivity {
         bt_frag3 = (Button)findViewById(R.id.bt_frag3);
         bt_frag4 = (Button)findViewById(R.id.bt_frag4);
         bt_frag5 = (Button)findViewById(R.id.bt_frag5);
+        bt_frag6 = (Button)findViewById(R.id.bt_frag6);
+        bt_frag7 = (Button)findViewById(R.id.bt_frag7);
 
-        final Fragment1 fragment1 = new Fragment1();
+        final Weekly fragment1 = new Weekly();
         FragmentManager fragmentManager = getSupportFragmentManager();
         final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.frame_container, fragment1);
@@ -57,41 +60,55 @@ public class MainActivity extends AppCompatActivity {
         bt_frag1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(Fragment1.newnstance());
+                replaceFragment(Weekly.newnstance());
             }
         });
 
         bt_frag2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(Fragment2.newnstance());
+                replaceFragment(Board.newnstance());
             }
         });
 
         bt_frag3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(Fragment3.newnstance());
+                replaceFragment(Search.newnstance());
             }
         });
 
         bt_frag4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(Fragment4.newnstance());
+                replaceFragment(Mypage.newnstance());
             }
         });
 
         bt_frag5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(Fragment5.newnstance());
+                replaceFragment(Recommend.newnstance());
+            }
+        });
+
+        bt_frag6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(Basket.newnstance());
+            }
+        });
+
+        bt_frag7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(KakaoPlus.newnstance());
             }
         });
 
     }
 
-    private void replaceFragment(Fragment fragment){
+    void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_container,fragment).commit();

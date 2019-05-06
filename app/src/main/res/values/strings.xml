@@ -4,12 +4,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="f1">BASKET</string>
-    <string name="f2">RECIPE</string>
-    <string name="f3">SEARCH</string>
-    <string name="f4">MYPAGE</string>
-    <string name="f5">MAIN</string>
-    <string name="basket_list">basket_list</string>
+    <string name="f1"> MAIN </string>
+    <string name="f1_1"> WEEKLY BEST RECIPE </string>
+    <string name="f5"> RECOMMEND </string>
+    <string name="f3"> SEARCH </string>
+    <string name="f4"> MYPAGE </string>
+    <string name="f2"> BOARD </string>
+    <string name="f6"> BASKET </string>
+    <string name="f7"> PLUS </string>
 
 
 </resources>

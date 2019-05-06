@@ -66,4 +66,6 @@ public class KakaoSDKAdapter extends KakaoAdapter {
             }
         };
     }
+
+
 }
