@@ -5,13 +5,19 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="f1"> MAIN </string>
-    <string name="f1_1"> WEEKLY BEST RECIPE </string>
-    <string name="f5"> RECMM </string>
-    <string name="f3"> SEARCH </string>
-    <string name="f4"> MYPAGE </string>
-    <string name="f2"> BOARD </string>
-    <string name="f6"> BASKET </string>
-    <string name="f7"> PLUS </string>
+    <string name="f1_1"> &#160;WEEKLY BEST RECIPE&#160; </string>
+    <string name="f5"> &#160;RECOMMEND&#160; </string>
+    <string name="f3"> &#160;SEARCH&#160; </string>
+    <string name="f4"> &#160;MYPAGE&#160; </string>
+    <string name="f2"> &#160;BOARD&#160; </string>
+    <string name="f6"> &#160;BASKET&#160; </string>
+
+    <!--프래그먼트 글 내용-->
+    <string name="ff1"> MAIN </string>
+    <string name="ff2"> BOARD </string>
+    <string name="ff3"> SEARCH </string>
+    <string name="ff4"> MYPAGE </string>
+    <string name="ff5"> RCMD </string>
 
 
 </resources>

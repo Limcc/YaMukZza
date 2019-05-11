@@ -30,7 +30,7 @@
                     android:layout_width="100dp"
                     android:layout_height="68dp"
                     android:background="#ff656c"
-                    android:text="@string/f1"
+                    android:text="@string/ff1"
                     android:textColor="@color/textColor" />
 
                 <Button
@@ -38,7 +38,7 @@
                     android:layout_width="100dp"
                     android:layout_height="68dp"
                     android:background="#ff656c"
-                    android:text="@string/f2"
+                    android:text="@string/ff2"
                     android:textColor="@color/textColor" />
 
                 <Button
@@ -46,7 +46,7 @@
                     android:layout_width="100dp"
                     android:layout_height="68dp"
                     android:background="#ff656c"
-                    android:text="@string/f3"
+                    android:text="@string/ff3"
                     android:textColor="@color/textColor" />
 
                 <Button
@@ -54,7 +54,7 @@
                     android:layout_width="100dp"
                     android:layout_height="68dp"
                     android:background="#ff656c"
-                    android:text="@string/f4"
+                    android:text="@string/ff4"
                     android:textColor="@color/textColor" />
 
                 <Button
@@ -62,7 +62,7 @@
                     android:layout_width="100dp"
                     android:layout_height="68dp"
                     android:background="#ff656c"
-                    android:text="@string/f5"
+                    android:text="@string/ff5"
                     android:textColor="@color/textColor" />
 
             </LinearLayout>
