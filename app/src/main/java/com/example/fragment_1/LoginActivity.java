@@ -1,6 +1,7 @@
 package com.example.fragment_1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -30,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
                 Session session = Session.getCurrentSession();
                 session.addCallback(new SessionCallback());
                 session.open(AuthType.KAKAO_LOGIN_ALL, LoginActivity.this);
+                Intent intent = new Intent(LoginActivity.this, Mypage2.class);
+                startActivity(intent);
             }
         });
         btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);

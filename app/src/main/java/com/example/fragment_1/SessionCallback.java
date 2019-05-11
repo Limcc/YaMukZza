@@ -1,15 +1,20 @@
 package com.example.fragment_1;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import com.kakao.auth.ISessionCallback;
 import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
 import com.kakao.usermgmt.callback.MeResponseCallback;
 import com.kakao.usermgmt.response.model.UserProfile;
 import com.kakao.util.exception.KakaoException;
 
 public class SessionCallback implements ISessionCallback {
+
+    MainActivity activity;
 
     // 로그인에 성공한 상태
     @Override
@@ -42,7 +47,6 @@ public class SessionCallback implements ISessionCallback {
             // 사용자정보 요청에 성공한 경우,
             @Override
             public void onSuccess(UserProfile userProfile) {
-
                 Log.e("SessionCallback :: ", "onSuccess");
 
                 String nickname = userProfile.getNickname();
@@ -58,6 +62,7 @@ public class SessionCallback implements ISessionCallback {
                 Log.e("Profile : ", thumnailPath + "");
                 Log.e("Profile : ", UUID + "");
                 Log.e("Profile : ", id + "");
+                activity.replaceFragment(Mypage2.newnstance());
             }
 
             // 사용자 정보 요청 실패
@@ -68,13 +73,12 @@ public class SessionCallback implements ISessionCallback {
         });
 
     }
-//    public void onClickLogout() {
-//        UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
-//            @Override
-//            public void onCompleteLogout() {
-//                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//    }
+    public void onClickLogout() {
+        UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
+            @Override
+            public void onCompleteLogout() {
+
+            }
+        });
+    }
 }

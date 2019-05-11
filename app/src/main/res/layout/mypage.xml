@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Mypage">
@@ -47,20 +48,47 @@
             app:layout_constraintTop_toBottomOf="@+id/textView12"
             tools:ignore="MissingConstraints" />
 
+        <Button
+            android:id="@+id/btn_kakao_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_kakao_login"
+            tools:ignore="MissingConstraints" />
 
-        <!--<Button-->
-            <!--android:id="@+id/kakao_plus"-->
-            <!--android:layout_width="295dp"-->
-            <!--android:layout_height="108dp"-->
-            <!--android:layout_marginTop="30dp"-->
-            <!--android:background="@drawable/kakao"-->
-            <!--android:gravity="center|right"-->
-            <!--android:text="카카오톡 문의    "-->
-            <!--android:textSize="25dp"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/btn_kakao_login"-->
-            <!--tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded,SpUsage" />-->
+        <Button
+            android:id="@+id/kakao_plus"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/kakao"
+            android:gravity="center|right"
+            android:text="카카오톡 문의    "
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_kakao_logout"
+            tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded,SpUsage" />
+
+        <Button
+            android:id="@+id/basket"
+            android:layout_width="282dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="68dp"
+            android:background="#ff565c"
+            android:gravity="center"
+            android:text="장바구니 리스트"
+            android:textColor="@color/textColor"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/kakao_plus"
+            tools:ignore="HardcodedText" />
 
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>

@@ -23,7 +23,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bt_frag1, bt_frag2, bt_frag3, bt_frag4, bt_frag5, bt_frag6, bt_frag7;
+    Button bt_frag1, bt_frag2, bt_frag3, bt_frag4, bt_frag5;
 
     PackageInstaller.SessionCallback callback;
 
@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
         bt_frag3 = (Button)findViewById(R.id.bt_frag3);
         bt_frag4 = (Button)findViewById(R.id.bt_frag4);
         bt_frag5 = (Button)findViewById(R.id.bt_frag5);
-        bt_frag6 = (Button)findViewById(R.id.bt_frag6);
-        bt_frag7 = (Button)findViewById(R.id.bt_frag7);
 
         final Weekly fragment1 = new Weekly();
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -92,19 +90,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bt_frag6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(Basket.newnstance());
-            }
-        });
-
-        bt_frag7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(KakaoPlus.newnstance());
-            }
-        });
 
     }
 
