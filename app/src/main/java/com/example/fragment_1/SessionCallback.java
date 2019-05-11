@@ -20,6 +20,7 @@ public class SessionCallback implements ISessionCallback {
     @Override
     public void onSessionOpened() {
         requestMe();
+        activity.replaceFragment(Mypage2.newnstance());
     }
 
     // 로그인에 실패한 상태
@@ -62,7 +63,6 @@ public class SessionCallback implements ISessionCallback {
                 Log.e("Profile : ", thumnailPath + "");
                 Log.e("Profile : ", UUID + "");
                 Log.e("Profile : ", id + "");
-                activity.replaceFragment(Mypage2.newnstance());
             }
 
             // 사용자 정보 요청 실패
@@ -77,7 +77,6 @@ public class SessionCallback implements ISessionCallback {
         UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
             @Override
             public void onCompleteLogout() {
-
             }
         });
     }

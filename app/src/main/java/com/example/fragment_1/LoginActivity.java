@@ -3,6 +3,7 @@ package com.example.fragment_1;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,9 @@ public class LoginActivity extends AppCompatActivity {
     private Button btn_custom_login;
     private LoginButton btn_kakao_login;
 
+    MainActivity activity;
+
+    @Nullable
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,12 +31,12 @@ public class LoginActivity extends AppCompatActivity {
         btn_custom_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                activity.replaceFragment(Mypage2.newnstance());
                 btn_custom_login.performClick();
                 Session session = Session.getCurrentSession();
                 session.addCallback(new SessionCallback());
                 session.open(AuthType.KAKAO_LOGIN_ALL, LoginActivity.this);
-                Intent intent = new Intent(LoginActivity.this, Mypage2.class);
-                startActivity(intent);
+
             }
         });
         btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);

@@ -2,7 +2,9 @@ package com.example.fragment_1;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
@@ -10,6 +12,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -18,9 +21,23 @@ import static com.example.fragment_1.R.drawable.beer1;
 public class Search extends Fragment {
     ListView listView = null;
 
+    MainActivity activity;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        activity = (MainActivity) getActivity();
+    }
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        activity = null;
+    }
+
     public static Search newnstance(){
         return new Search();
     }
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,6 +71,14 @@ public class Search extends Fragment {
 
             }
         });
+        //onItemClickListener를 추가
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                activity.replaceFragment(Recipe.newnstance());
+            }
+        });
         return v;
     }
+
 }
