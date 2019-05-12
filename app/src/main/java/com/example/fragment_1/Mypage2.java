@@ -49,7 +49,7 @@ public class Mypage2 extends Fragment {
             // 요청을 보내야 하는데 메인 액티비티에 다가 메소드를 하나 만들어야 한다.
             @Override
             public void onClick(View v) {
-                activity.replaceFragment(KakaoPlus2.newnstance());
+//                activity.replaceFragment(KakaoPlus2.newnstance());
             }
         });
         return rootview;
