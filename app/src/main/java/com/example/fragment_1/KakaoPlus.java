@@ -23,7 +23,7 @@ public class KakaoPlus extends Fragment {
 
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.mypage, container, false);
+        return inflater.inflate(R.layout.mypage2, container, false);
     }
 
 }

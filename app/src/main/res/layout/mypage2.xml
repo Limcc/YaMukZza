@@ -65,8 +65,8 @@
             app:layout_constraintTop_toBottomOf="@+id/textView14"
             tools:ignore="HardcodedText" />
 
-        <TextView
-            android:id="@+id/textView18"
+        <Button
+            android:id="@+id/btn_kakao_logout"
             android:layout_width="282dp"
             android:layout_height="57dp"
             android:layout_marginStart="50dp"
@@ -76,7 +76,7 @@
             android:layout_marginRight="50dp"
             android:background="#ff565c"
             android:gravity="center"
-            android:text="로그아웃"
+            android:text="@string/com_kakao_logout_button"
             android:textColor="@color/textColor"
             android:textSize="35sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -96,7 +96,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView18"
+            app:layout_constraintTop_toBottomOf="@+id/btn_kakao_logout"
             tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded,SpUsage" />
 
         <Button

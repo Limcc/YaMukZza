@@ -16,6 +16,10 @@ public class SessionCallback implements ISessionCallback {
 
     MainActivity activity;
 
+    SessionCallback(MainActivity activity) {
+        this.activity = activity;
+    }
+
     // 로그인에 성공한 상태
     @Override
     public void onSessionOpened() {
@@ -47,25 +51,20 @@ public class SessionCallback implements ISessionCallback {
             // 사용자정보 요청에 성공한 경우,
             @Override
             public void onSuccess(UserProfile userProfile) {
-                Log.e("SessionCallback :: ", "onSuccess");
+                activity.replaceFragment(Mypage2.newnstance());
 
-//                String nickname = userProfile.getNickname();
-//                String email = userProfile.getEmail();
-//                String profileImagePath = userProfile.getProfileImagePath();
-//                String thumnailPath = userProfile.getThumbnailImagePath();
-//                String UUID = userProfile.getUUID();
-//                long id = userProfile.getId();
-//
-//                Log.e("Profile : ", nickname + "");
-//                Log.e("Profile : ", email + "");
-//                Log.e("Profile : ", profileImagePath  + "");
-//                Log.e("Profile : ", thumnailPath + "");
-//                Log.e("Profile : ", UUID + "");
-//                Log.e("Profile : ", id + "");
+                // TODO 사용자 정보 훔쳐보기
+                String nickname = userProfile.getNickname();
+                String email = userProfile.getEmail();
+                String profileImagePath = userProfile.getProfileImagePath();
+                String thumnailPath = userProfile.getThumbnailImagePath();
+                String UUID = userProfile.getUUID();
+                long id = userProfile.getId();
 
-//                Intent intent = new Intent(SessionCallback.this, Mypage2.class);
-//                activity.startActivity(intent);
-//                activity.finish();
+                Log.e("Profile : ", nickname + "");
+                Log.e("Profile : ", profileImagePath  + "");
+                Log.e("Profile : ", thumnailPath + "");
+                Log.e("Profile : ", id + "");
 
             }
 
@@ -81,8 +80,8 @@ public class SessionCallback implements ISessionCallback {
         UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
             @Override
             public void onCompleteLogout() {
-//                activity.replaceFragment(Mypage.newnstance());
-//                activity.finish();
+                activity.replaceFragment(Mypage.newnstance());
+                activity.finish();
             }
         });
     }

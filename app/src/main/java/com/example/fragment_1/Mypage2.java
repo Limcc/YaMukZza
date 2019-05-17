@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
+
 public class Mypage2 extends Fragment {
 
     public static Mypage2 newnstance(){
@@ -49,7 +52,21 @@ public class Mypage2 extends Fragment {
             // 요청을 보내야 하는데 메인 액티비티에 다가 메소드를 하나 만들어야 한다.
             @Override
             public void onClick(View v) {
-//                activity.replaceFragment(KakaoPlus2.newnstance());
+                activity.replaceFragment(KakaoPlus.newnstance());
+            }
+        });
+
+        Button button3 = (Button) rootview.findViewById(R.id.btn_kakao_logout);
+        button3.setOnClickListener(new View.OnClickListener() {
+            // 요청을 보내야 하는데 메인 액티비티에 다가 메소드를 하나 만들어야 한다.
+            @Override
+            public void onClick(View v) {
+                UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
+                    @Override
+                    public void onCompleteLogout() {
+                        activity.replaceFragment(Mypage.newnstance());
+                    }
+                });
             }
         });
         return rootview;

@@ -4,10 +4,16 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.kakao.auth.AuthType;
+import com.kakao.auth.Session;
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
 
 public class Mypage extends Fragment {
 
@@ -36,23 +42,17 @@ public class Mypage extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.mypage,container,false);
 
-        Button button2 = (Button) rootview.findViewById(R.id.kakao_plus);
+        Button button2 = (Button) rootview.findViewById(R.id.btn_kakao_login);
         button2.setOnClickListener(new View.OnClickListener() {
             // 요청을 보내야 하는데 메인 액티비티에 다가 메소드를 하나 만들어야 한다.
             @Override
             public void onClick(View v) {
-                activity.replaceFragment(KakaoPlus.newnstance());
+                Session session = Session.getCurrentSession();
+                session.addCallback(new SessionCallback(activity));
+                session.open(AuthType.KAKAO_LOGIN_ALL, Mypage.this);
             }
         });
 
-        Button button3 = (Button) rootview.findViewById(R.id.btn_kakao_logout);
-        button3.setOnClickListener(new View.OnClickListener() {
-            // 요청을 보내야 하는데 메인 액티비티에 다가 메소드를 하나 만들어야 한다.
-            @Override
-            public void onClick(View v) {
-                activity.replaceFragment(Mypage2.newnstance());
-            }
-        });
 
         //getActivity();      // 액티비티위에 올라가게 한다.
         return rootview;
