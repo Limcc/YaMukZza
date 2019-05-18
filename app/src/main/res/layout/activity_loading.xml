@@ -20,6 +20,4 @@
         tools:layout_editor_absoluteY="match_parent" />
 
 
-
-
 </android.support.constraint.ConstraintLayout>

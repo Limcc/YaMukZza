@@ -44,7 +44,6 @@ public class Custom_Adapter_Board extends BaseAdapter{
             holder = new CustomViewHolder();
             holder.imageView = (TextView) convertView.findViewById(R.id.text_title);
             holder.textTitle = (TextView) convertView.findViewById(R.id.text_title2);
-            holder.textContent = (TextView) convertView.findViewById(R.id.text_content);
 
             convertView.setTag(holder);
         } else {
@@ -56,7 +55,6 @@ public class Custom_Adapter_Board extends BaseAdapter{
 
         holder.imageView.setText(dto2.getResId());
         holder.textTitle.setText(dto2.getTitle());
-        holder.textContent.setText(dto2.getContent());
 
         return convertView;
     }

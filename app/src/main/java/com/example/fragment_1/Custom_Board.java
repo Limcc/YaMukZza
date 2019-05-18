@@ -3,7 +3,6 @@ package com.example.fragment_1;
 public class Custom_Board {
     private String resId;
     private String title;
-    private String content;
 
     public String getResId() {
         return resId;
@@ -21,12 +20,5 @@ public class Custom_Board {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
 
 }

@@ -16,7 +16,7 @@
         android:layout_marginRight="159dp"
         android:background="#ff565c"
         android:gravity="center"
-        android:text=" 글 작성 "
+        android:text=" 글 확인 "
         android:textColor="@color/textColor"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,16 +50,15 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
-        <EditText
-            android:id="@+id/editText"
+        <TextView
+            android:id="@+id/board_name"
             android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginLeft="9dp"
-            android:layout_marginTop="34dp"
-            android:layout_marginEnd="11dp"
-            android:layout_marginRight="11dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="39dp"
+            android:text="TextView"
+            android:textSize="22sp"
             app:layout_constraintStart_toEndOf="@+id/textView26"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
@@ -91,13 +90,13 @@
             app:layout_constraintTop_toBottomOf="@+id/textView27"
             tools:ignore="MissingConstraints">
 
-            <EditText
-                android:id="@+id/editText2"
+            <TextView
+                android:id="@+id/board_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="-14dp"
-                tools:layout_editor_absoluteY="-18dp" />
+                android:text="TextView"
+                android:textSize="22sp"
+                tools:ignore="MissingConstraints" />
         </ScrollView>
 
         <TextView
@@ -131,28 +130,16 @@
             app:layout_constraintTop_toBottomOf="@+id/textView25"
             tools:ignore="MissingConstraints">
 
-            <EditText
+            <TextView
+                android:id="@+id/board_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="22sp"
                 tools:ignore="MissingConstraints" />
         </ScrollView>
 
-        <Button
-            android:id="@+id/writeSu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#ff565c"
-            android:gravity="center"
-            android:text="완료"
-            android:textColor="@color/textColor"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView3"
-            tools:ignore="MissingConstraints" />
     </android.support.constraint.ConstraintLayout>
 
-    재료, 만드는 법
 
 </android.support.constraint.ConstraintLayout>

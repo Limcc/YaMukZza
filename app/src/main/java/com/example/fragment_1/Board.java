@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -21,6 +22,7 @@ public class Board extends Fragment {
     }
     MainActivity activity;
     private Custom_Adapter_Board adapter;
+    public static String foodName;
     private ListView listView;
 //    public static String foodName;
     public static JSONArray list;
@@ -67,8 +69,6 @@ public class Board extends Fragment {
                         Custom_Board dto2 = new Custom_Board();
                         dto2.setResId(item.getString("boardnum"));
                         dto2.setTitle(item.getString("글 제목"));
-                        dto2.setContent(item.getString("조회수"));
-                        dto2.setContent(null);
                         adapter.addItem(dto2);
                     }
 
@@ -92,6 +92,19 @@ public class Board extends Fragment {
             @Override
             public void onClick(View v) {
                 activity.replaceFragment(RecipeWrite.newnstance());
+            }
+        });
+        //onItemClickListener를 추가
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                try {
+                    JSONObject item = list.getJSONObject(position);
+                    foodName = item.getString("글 제목");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                activity.replaceFragment(BoardView.newnstance(foodName));
             }
         });
         return rootview;
