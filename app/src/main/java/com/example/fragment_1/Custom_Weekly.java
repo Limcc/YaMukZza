@@ -1,15 +1,15 @@
 package com.example.fragment_1;
 
 public class Custom_Weekly {
-    private int resId;
+    private String resId;
     private String title;
     private String content;
 
-    public int getResId() {
+    public String getResId() {
         return resId;
     }
 
-    public void setResId(int resId) {
+    public void setResId(String resId) {
         this.resId = resId;
     }
 

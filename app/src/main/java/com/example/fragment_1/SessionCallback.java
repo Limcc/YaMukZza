@@ -1,7 +1,6 @@
 package com.example.fragment_1;
 
-import android.content.Context;
-import android.content.Intent;
+
 import android.util.Log;
 
 import com.kakao.auth.ISessionCallback;

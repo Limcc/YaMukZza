@@ -1,5 +1,8 @@
 package com.example.fragment_1;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class Custom_Adapter extends BaseAdapter{
@@ -49,7 +53,9 @@ public class Custom_Adapter extends BaseAdapter{
 
         Custom_Weekly dto = listCustom.get(position);
 
-        holder.imageView.setImageResource(dto.getResId());
+        new DownloadImageTask(holder.imageView)
+                .execute(dto.getResId());
+        //holder.imageView.setImageResource(dto.getResId());
         holder.textTitle.setText(dto.getTitle());
         holder.textContent.setText(dto.getContent());
 
@@ -65,5 +71,29 @@ public class Custom_Adapter extends BaseAdapter{
     // MainActivity에서 Adapter에있는 ArrayList에 data를 추가시켜주는 함수
     public void addItem(Custom_Weekly dto) {
         listCustom.add(dto);
+    }
+
+    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView bmImage;
+
+        public DownloadImageTask(ImageView bmImage) {
+            this.bmImage = bmImage;
+        }
+
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            Bitmap mIcon11 = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon11 = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return mIcon11;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+            bmImage.setImageBitmap(result);
+        }
     }
 }

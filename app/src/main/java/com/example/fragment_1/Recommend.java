@@ -59,7 +59,7 @@ public class Recommend extends Fragment {
 
         for (int i = 0; i < arrResld.length(); i++) {
             Custom_Weekly dto = new Custom_Weekly();
-            dto.setResId(arrResld.getResourceId(i, 0));
+            //dto.setResId(arrResld.getResourceId(i, 0));
             dto.setTitle(titles[i]);
             dto.setContent(contents[i]);
 
