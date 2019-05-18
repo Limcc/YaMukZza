@@ -2,7 +2,9 @@ package com.example.fragment_1;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,10 +18,16 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import static com.example.fragment_1.R.drawable.beer1;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 public class Search extends Fragment {
+    private ListViewAdapter adapter;
     ListView listView = null;
+    public static String foodName;
+    public static JSONArray list;
 
     MainActivity activity;
 
@@ -44,22 +52,55 @@ public class Search extends Fragment {
         ViewGroup v = (ViewGroup) inflater.inflate(R.layout.search, container, false);
         // Inflate the layout for this fragment
 
-        ListViewAdapter adapter;
         adapter = new ListViewAdapter();
 
         listView = (ListView) v.findViewById(R.id.listview1);
-        listView.setAdapter(adapter);
-        adapter.addItem(ContextCompat.getDrawable(getActivity(), beer1),"맥주","heaven.\r\n I do it for you.");
+        new Server("yamukzza/search_recipe/food.php"){
+            ProgressDialog progressDialog;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                progressDialog = ProgressDialog.show(getContext(),
+                        "Please Wait", null, true, true);
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+                progressDialog.dismiss();
+                try {
+                    JSONObject data = new JSONObject(result);
+                    list = data.getJSONArray("foodnamelist");
+
+                    for (int i = 0; i < list.length(); i++) {
+                        JSONObject item = list.getJSONObject(i);
+                        ListViewItem dto = new ListViewItem();
+                        dto.setTitle(item.getString("요리이름"));
+                        dto.setTitle(item.getString("재료이름"));
+                        dto.setContent(null);
+                        adapter.addItem(item.getString("요리이름"), item.getString("재료이름"));
+                    }
+
+                    listView.setAdapter(adapter);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }.execute();
+
+        setData();
+
         EditText editTextFilter = (EditText)v.findViewById(R.id.editTextFilter);
         editTextFilter.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged (Editable edit){
                 String filterText = edit.toString();
-//                if (filterText.length() > 0) {
-//                    listView.setFilterText(filterText);
-//                } else {
-//                    listView.clearTextFilter();
-//                }
+                if (filterText.length() > 0) {
+                    listView.setFilterText(filterText);
+                } else {
+                    listView.clearTextFilter();
+                }
                 ((ListViewAdapter)listView.getAdapter()).getFilter().filter(filterText);
             }
             @Override
@@ -75,10 +116,29 @@ public class Search extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                activity.replaceFragment(Recipe.newnstance());
+                try {
+                    JSONObject item = list.getJSONObject(position);
+                    foodName = item.getString("요리이름");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                activity.replaceFragment(Recipe.newnstance(foodName));
             }
         });
         return v;
     }
+    private void setData () {
+        TypedArray arrResld = getResources().obtainTypedArray(R.array.resId);
+        String[] titles = getResources().getStringArray(R.array.title);
+        String[] contents = getResources().getStringArray(R.array.content);
 
+//        for (int i = 0; i < arrResld.length(); i++) {
+//            Custom_Weekly dto = new Custom_Weekly();
+//            //dto.setResId(arrResld.getResourceId(i, 0));
+//            dto.setTitle(titles[i]);
+//            dto.setContent(contents[i]);
+//
+//            adapter.addItem(dto);
+//        }
+    }
 }

@@ -5,6 +5,7 @@
         <item>@drawable/beer1</item>
         <item>@drawable/beer1</item>
         <item>@drawable/beer1</item>
+        <item>@drawable/beer1</item>
 
     </integer-array>
 
@@ -12,11 +13,13 @@
         <item>국화</item>
         <item>사막</item>
         <item>수국</item>
+        <item>수국</item>
     </string-array>
 
     <string-array name="content">
         <item>빨간 국화입니다.</item>
         <item>황량한 사막입니다.</item>
+        <item>예쁜 수국입니다.</item>
         <item>예쁜 수국입니다.</item>
 
     </string-array>

@@ -20,6 +20,8 @@ public class Weekly extends Fragment {
 
     private Custom_Adapter adapter;
     private ListView listView;
+    public static String foodName;
+    public static JSONArray list;
 
     MainActivity activity;
     @Override
@@ -45,7 +47,7 @@ public class Weekly extends Fragment {
         adapter = new Custom_Adapter();
         listView = (ListView) rootview.findViewById(R.id.listView);
 
-        new Server("yamukzza/cart/cartlist.php"){
+        new Server("yamukzza/search_recipe/weeklyrecipe.php"){
             ProgressDialog progressDialog;
             @Override
             protected void onPreExecute() {
@@ -60,15 +62,14 @@ public class Weekly extends Fragment {
                 progressDialog.dismiss();
                 try {
                     JSONObject data = new JSONObject(result);
-                    JSONArray list = data.getJSONArray("cartlist");
+                    list = data.getJSONArray("weekly");
 
-                    for (int i = 0; i < list.length(); i++) {
+                    for (int i = 0; i < 4; i++) {
                         JSONObject item = list.getJSONObject(i);
                         Custom_Weekly dto = new Custom_Weekly();
                         dto.setResId(item.getString("이미지"));
-                        dto.setTitle(item.getString("재료명"));
-                        dto.setContent(item.getString("가격"));
-
+                        dto.setTitle(item.getString("요리이름"));
+                        dto.setContent(null);
                         adapter.addItem(dto);
                     }
 
@@ -88,7 +89,13 @@ public class Weekly extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                activity.replaceFragment(Recipe.newnstance());
+                try {
+                    JSONObject item = list.getJSONObject(position);
+                    foodName = item.getString("요리이름");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                activity.replaceFragment(Recipe.newnstance(foodName));
             }
         });
         return rootview;
