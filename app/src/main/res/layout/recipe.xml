@@ -7,8 +7,6 @@
     tools:context=".Recipe">
 
     <!-- TODO: Update blank fragment layout -->
-
-
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -17,25 +15,24 @@
             android:id="@+id/image"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginRight="45dp"
             android:src="@mipmap/ic_launcher"
-            app:layout_constraintStart_toEndOf="@+id/name"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="228dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="27dp"
-            android:layout_marginLeft="27dp"
+            android:layout_width="220dp"
+            android:layout_height="59dp"
             android:layout_marginTop="104dp"
-            android:background="#ff565c"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/textColor"
-            android:textSize="24sp"
+            android:textColor="#ff565c"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="HardcodedText,MissingConstraints" />
@@ -43,26 +40,25 @@
         <TextView
             android:id="@+id/recipe_title1"
             android:layout_width="97dp"
-            android:layout_height="49dp"
+            android:layout_height="40dp"
             android:layout_marginStart="27dp"
             android:layout_marginLeft="27dp"
             android:layout_marginTop="50dp"
-            android:background="#ff565c"
-            android:gravity="center"
+            android:gravity="left"
             android:text="재료"
-            android:textColor="@color/textColor"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name"
             tools:ignore="HardcodedText,MissingConstraints" />
 
         <TextView
             android:id="@+id/recipe_title"
-            android:layout_width="365dp"
-            android:layout_height="145dp"
+            android:layout_width="431dp"
+            android:layout_height="147dp"
             android:layout_marginStart="27dp"
             android:layout_marginLeft="27dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:text="TextView"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,15 +68,14 @@
         <TextView
             android:id="@+id/recipe_content1"
             android:layout_width="126dp"
-            android:layout_height="48dp"
+            android:layout_height="40dp"
             android:layout_marginStart="27dp"
             android:layout_marginLeft="27dp"
             android:layout_marginTop="31dp"
-            android:background="#ff565c"
-            android:gravity="center"
+            android:gravity="left"
             android:text="만드는법"
-            android:textColor="@color/textColor"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recipe_title"
             tools:ignore="HardcodedText,MissingConstraints" />
@@ -88,7 +83,11 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +114,5 @@
                     tools:ignore="HardcodedText,MissingConstraints" />
             </LinearLayout>
         </ScrollView>
-
     </android.support.constraint.ConstraintLayout>
-
 </FrameLayout>

@@ -3,14 +3,12 @@ package com.example.fragment_1;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.io.InputStream;
 import java.util.ArrayList;
 
@@ -41,48 +39,36 @@ public class Custom_Adapter extends BaseAdapter{
         CustomViewHolder holder;
         if (convertView == null) {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.weekly_item, null, false);
-
             holder = new CustomViewHolder();
             holder.imageView = (ImageView) convertView.findViewById(R.id.imageView);
             holder.textTitle = (TextView) convertView.findViewById(R.id.text_title);
             holder.textContent = (TextView) convertView.findViewById(R.id.text_content);
-
             convertView.setTag(holder);
         } else {
             holder = (CustomViewHolder) convertView.getTag();
         }
-
         Custom_Weekly dto = listCustom.get(position);
-
         new DownloadImageTask(holder.imageView)
                 .execute(dto.getResId());
-        //holder.imageView.setImageResource(dto.getResId());
         holder.textTitle.setText(dto.getTitle());
         holder.textContent.setText(dto.getContent());
-
         return convertView;
     }
-
     class CustomViewHolder {
         ImageView imageView;
         TextView textTitle;
         TextView textContent;
     }
-
     // MainActivity에서 Adapter에있는 ArrayList에 data를 추가시켜주는 함수
     public void addItem(Custom_Weekly dto) {
         listCustom.add(dto);
     }
-
 }
-
 class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     ImageView bmImage;
-
     DownloadImageTask(ImageView bmImage) {
         this.bmImage = bmImage;
     }
-
     protected Bitmap doInBackground(String... urls) {
         String urldisplay = urls[0];
         Bitmap mIcon11 = null;
@@ -94,7 +80,6 @@ class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         }
         return mIcon11;
     }
-
     protected void onPostExecute(Bitmap result) {
         bmImage.setImageBitmap(result);
     }

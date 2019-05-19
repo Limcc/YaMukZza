@@ -1,7 +1,6 @@
 package com.example.fragment_1;
 
 import android.content.Context;
-
 import com.kakao.auth.ApprovalType;
 import com.kakao.auth.AuthType;
 import com.kakao.auth.IApplicationConfig;
@@ -9,13 +8,10 @@ import com.kakao.auth.ISessionConfig;
 import com.kakao.auth.KakaoAdapter;
 
 public class KakaoSDKAdapter extends KakaoAdapter {
-
     // 로그인 시 사용 될, Session의 옵션 설정을 위한 인터페이스 입니다.
-
     @Override
     public ISessionConfig getSessionConfig() {
         return new ISessionConfig() {
-
             // 로그인 시에 인증 타입을 지정합니다.
             @Override
             public AuthType[] getAuthTypes() {
@@ -27,7 +23,6 @@ public class KakaoSDKAdapter extends KakaoAdapter {
                 // KAKAO_LOGIN_ALL : 모든 로그인 방식을 제공
                 return new AuthType[] {AuthType.KAKAO_ACCOUNT};
             }
-
             // 로그인 웹뷰에서 pause와 resume시에 타이머를 설정하여, CPU의 소모를 절약 할 지의 여부를 지정합니다.
             // true로 지정할 경우, 로그인 웹뷰의 onPuase()와 onResume()에 타이머를 설정해야 합니다.
             @Override
@@ -55,7 +50,6 @@ public class KakaoSDKAdapter extends KakaoAdapter {
             }
         };
     }
-
     // Application이 가지고 있는 정보를 얻기 위한 인터페이스 입니다.
     @Override
     public IApplicationConfig getApplicationConfig() {
@@ -66,6 +60,4 @@ public class KakaoSDKAdapter extends KakaoAdapter {
             }
         };
     }
-
-
 }

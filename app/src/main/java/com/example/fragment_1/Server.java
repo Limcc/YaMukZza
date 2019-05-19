@@ -2,7 +2,6 @@ package com.example.fragment_1;
 
 import android.os.AsyncTask;
 import android.util.Log;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -17,29 +16,23 @@ public class Server extends AsyncTask<String, Void, String> {
     Server(String url){
         URL += url;
     }
-
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
     }
-
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
     }
-
 
     @Override
     protected String doInBackground(String... params) {
         try {
             URL url = new URL(URL);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-
-
             httpURLConnection.setReadTimeout(5000);
             httpURLConnection.setConnectTimeout(5000);
             httpURLConnection.connect();
-
 
             int responseStatusCode = httpURLConnection.getResponseCode();
             Log.d(TAG, "response code - " + responseStatusCode);
@@ -60,7 +53,6 @@ public class Server extends AsyncTask<String, Void, String> {
             while((line = bufferedReader.readLine()) != null){
                 sb.append(line);
             }
-
             bufferedReader.close();
             return sb.toString().trim();
         } catch (Exception e) {

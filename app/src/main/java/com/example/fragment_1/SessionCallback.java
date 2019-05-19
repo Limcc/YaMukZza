@@ -2,7 +2,6 @@ package com.example.fragment_1;
 
 
 import android.util.Log;
-
 import com.kakao.auth.ISessionCallback;
 import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
@@ -18,19 +17,16 @@ public class SessionCallback implements ISessionCallback {
     SessionCallback(MainActivity activity) {
         this.activity = activity;
     }
-
     // 로그인에 성공한 상태
     @Override
     public void onSessionOpened() {
         requestMe();
     }
-
     // 로그인에 실패한 상태
     @Override
     public void onSessionOpenFailed(KakaoException exception) {
         Log.e("SessionCallback :: ", "onSessionOpenFailed : " + exception.getMessage());
     }
-
     // 사용자 정보 요청
     private void requestMe() {
         // 사용자정보 요청 결과에 대한 Callback
@@ -40,17 +36,15 @@ public class SessionCallback implements ISessionCallback {
             public void onSessionClosed(ErrorResult errorResult) {
                 Log.e("SessionCallback :: ", "onSessionClosed : " + errorResult.getErrorMessage());
             }
-
             // 회원이 아닌 경우,
             @Override
             public void onNotSignedUp() {
                 Log.e("SessionCallback :: ", "onNotSignedUp");
             }
-
             // 사용자정보 요청에 성공한 경우,
             @Override
             public void onSuccess(UserProfile userProfile) {
-                activity.replaceFragment(Mypage2.newnstance());
+                activity.replaceFragment(Mypage.newnstance());
 
                 // TODO 사용자 정보 훔쳐보기
                 String nickname = userProfile.getNickname();
@@ -64,16 +58,13 @@ public class SessionCallback implements ISessionCallback {
                 Log.e("Profile : ", profileImagePath  + "");
                 Log.e("Profile : ", thumnailPath + "");
                 Log.e("Profile : ", id + "");
-
             }
-
             // 사용자 정보 요청 실패
             @Override
             public void onFailure(ErrorResult errorResult) {
                 Log.e("SessionCallback :: ", "onFailure : " + errorResult.getErrorMessage());
             }
         });
-
     }
     public void onClickLogout() {
         UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {

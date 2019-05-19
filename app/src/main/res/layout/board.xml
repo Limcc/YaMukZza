@@ -8,19 +8,20 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="836dp">
 
         <Button
             android:id="@+id/write"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="#ff565c"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/pink"
             android:gravity="center"
             android:text="글쓰기"
             android:textColor="@color/textColor"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
             tools:ignore="MissingConstraints" />
@@ -31,14 +32,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="97dp"
+            android:layout_marginTop="120dp"
             android:layout_marginEnd="150dp"
             android:layout_marginRight="150dp"
-            android:background="#ff565c"
             android:gravity="center"
             android:text="@string/f2"
-            android:textColor="@color/textColor"
-            android:textSize="30dp"
+            android:textColor="#ff565c"
+            android:textSize="35dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

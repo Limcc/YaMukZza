@@ -2,7 +2,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Mypage">
@@ -15,44 +14,69 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="96dp"
-            android:layout_marginEnd="150dp"
-            android:layout_marginRight="150dp"
-            android:background="#ff565c"
+            android:layout_marginTop="120dp"
             android:gravity="center"
             android:text="@string/f4"
-            android:textColor="@color/textColor"
-            android:textSize="30dp"
+            android:textColor="#ff565c"
+            android:textSize="35dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
-        <!--<Button-->
-        <!--android:id="@+id/btn_custom_login"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="카카오 로그인"
-         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="255dp"-->
-        <!--tools:layout_editor_absoluteX="0dp"/>-->
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="301dp"
+            android:layout_height="248dp"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/yamukzza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12"
+            tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/btn_kakao_login"
-            android:layout_width="250dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/kakallogin"
+            android:id="@+id/btn_kakao_logout"
+            android:layout_width="235dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/kakaologout"
+            android:gravity="center"
+            android:textColor="@color/textColor"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            tools:ignore="HardcodedText,MissingConstraints" />
+
+        <Button
+            android:id="@+id/kakao_plus2"
+            android:layout_width="236dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/kakaoplus"
             android:gravity="center|right"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/btn_kakao_logout"
             tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded,SpUsage" />
 
+        <Button
+            android:id="@+id/basket"
+            android:layout_width="232dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/pink"
+            android:gravity="center"
+            android:text="cartlist"
+            android:textColor="#ffffff"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/kakao_plus2"
+            tools:ignore="HardcodedText" />
 
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>

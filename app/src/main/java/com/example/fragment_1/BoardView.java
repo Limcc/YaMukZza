@@ -7,9 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,10 +22,8 @@ public class BoardView extends Fragment {
         return new BoardView();
     }
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.recipe_view,container,false);
-        // Inflate the layout for this fragment
         final TextView board_name = (TextView) rootview.findViewById(R.id.board_name);
         final TextView board_title = (TextView) rootview.findViewById(R.id.board_title);
         final TextView board_content = (TextView) rootview.findViewById(R.id.board_content);
@@ -40,7 +36,6 @@ public class BoardView extends Fragment {
                 progressDialog = ProgressDialog.show(getContext(),
                         "Please Wait", null, true, true);
             }
-
             @Override
             protected void onPostExecute(String result) {
                 super.onPostExecute(result);
@@ -56,19 +51,13 @@ public class BoardView extends Fragment {
                             board_name.setText(item.getString("글 제목"));
                             board_title.setText(item.getString("재료"));
                             board_content.setText(item.getString("만드는법"));
-
                         }
                     }
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-
         }.execute();
-
-        //onItemClickListener를 추가
-
         return rootview;
     }
 }

@@ -1,16 +1,10 @@
 package com.example.fragment_1;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.io.InputStream;
 import java.util.ArrayList;
 
 public class Custom_Adapter_Board extends BaseAdapter{
@@ -40,29 +34,21 @@ public class Custom_Adapter_Board extends BaseAdapter{
         CustomViewHolder holder;
         if (convertView == null) {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.board_item, null, false);
-
             holder = new CustomViewHolder();
             holder.imageView = (TextView) convertView.findViewById(R.id.text_title);
             holder.textTitle = (TextView) convertView.findViewById(R.id.text_title2);
-
             convertView.setTag(holder);
         } else {
             holder = (CustomViewHolder) convertView.getTag();
         }
-
         Custom_Board dto2 = listCustom.get(position);
-
-
         holder.imageView.setText(dto2.getResId());
         holder.textTitle.setText(dto2.getTitle());
-
         return convertView;
     }
-
     class CustomViewHolder {
         TextView imageView;
         TextView textTitle;
-        TextView textContent;
     }
 
     // MainActivity에서 Adapter에있는 ArrayList에 data를 추가시켜주는 함수
