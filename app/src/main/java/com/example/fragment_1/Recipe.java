@@ -63,6 +63,20 @@ public class Recipe extends Fragment {
             }
         }.execute();
 
+        new Server("yamukzza/search_recipe/hit.php?요리이름="+food){
+            ProgressDialog progressDialog;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+            }
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+
+            }
+        }.execute();
+
         return rootview;
     }
 }

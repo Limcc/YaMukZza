@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,12 @@ import android.widget.ListView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import static android.content.ContentValues.TAG;
 
 public class Search extends Fragment {
     private ListViewAdapter adapter;
@@ -101,6 +108,7 @@ public class Search extends Fragment {
                 ListViewItem obj = (ListViewItem)listView.getAdapter().getItem(position);
                 foodName = obj.getTitle();
                 activity.replaceFragment(Recipe.newnstance(foodName));
+
             }
         });
         return v;
