@@ -117,12 +117,14 @@ public class Search extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                try {
-                    JSONObject item = list.getJSONObject(position);
-                    foodName = item.getString("요리이름");
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                ListViewItem obj = (ListViewItem)listView.getAdapter().getItem(position);
+                foodName = obj.getTitle();
+//                try {
+//                    JSONObject item = list.getJSONObject(position);
+//                    foodName = item.getString("요리이름");
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
                 activity.replaceFragment(Recipe.newnstance(foodName));
             }
         });

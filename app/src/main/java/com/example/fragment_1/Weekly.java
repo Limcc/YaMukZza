@@ -64,7 +64,7 @@ public class Weekly extends Fragment {
                     JSONObject data = new JSONObject(result);
                     list = data.getJSONArray("weekly");
 
-                    for (int i = 0; i < 4; i++) {
+                    for (int i = 0; i < 5; i++) {
                         JSONObject item = list.getJSONObject(i);
                         Custom_Weekly dto = new Custom_Weekly();
                         dto.setResId(item.getString("이미지"));
