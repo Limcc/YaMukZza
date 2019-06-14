@@ -57,7 +57,7 @@ public class Basket extends Fragment {
                         Custom_Weekly dto = new Custom_Weekly();
                         dto.setResId(item.getString("이미지"));
                         dto.setTitle(item.getString("재료명"));
-                        dto.setContent(item.getString("가격"));
+                        dto.setContent(item.getString("가격")+"원");
                         adapter.addItem(dto);
                     }
                     listView.setAdapter(adapter);

@@ -86,11 +86,11 @@ public class Search extends Fragment {
             @Override
             public void afterTextChanged (Editable edit){
                 String filterText = edit.toString();
-                if (filterText.length() > 0) {
-                    listView.setFilterText(filterText);
-                } else {
-                    listView.clearTextFilter();
-                }
+//                if (filterText.length() > 0) {
+//                    listView.setFilterText(filterText);
+//                } else {
+//                    listView.clearTextFilter();
+//                }
                 ((ListViewAdapter)listView.getAdapter()).getFilter().filter(filterText);
             }
             @Override

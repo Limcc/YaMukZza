@@ -52,13 +52,13 @@ public class RecipeWrite extends Fragment {
             @Override
             public void onClick(View v) {
                 String title = mEditTextTitle.getText().toString();
-                String 재료 = mEditText재료.getText().toString();
                 String content = mEditTextContent.getText().toString();
+                String 재료 = mEditText재료.getText().toString();
                 InsertData task = new InsertData();
-                task.execute("http://yamukzza.iptime.org/yamukzza/board/boardinsert.php", title,재료,content);
+                task.execute("http://yamukzza.iptime.org/yamukzza/board/boardinsert.php", title,content,재료);
                 mEditTextTitle.setText(title);
-                mEditText재료.setText(재료);
                 mEditTextContent.setText(content);
+                mEditText재료.setText(재료);
                 activity.replaceFragment(Board.newnstance());
             }
         });

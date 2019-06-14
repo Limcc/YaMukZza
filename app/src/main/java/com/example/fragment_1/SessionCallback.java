@@ -44,20 +44,13 @@ public class SessionCallback implements ISessionCallback {
             // 사용자정보 요청에 성공한 경우,
             @Override
             public void onSuccess(UserProfile userProfile) {
-                activity.replaceFragment(Mypage.newnstance());
 
-//                // TODO 사용자 정보 훔쳐보기
 //                String nickname = userProfile.getNickname();
 //                String email = userProfile.getEmail();
 //                String profileImagePath = userProfile.getProfileImagePath();
 //                String thumnailPath = userProfile.getThumbnailImagePath();
 //                String UUID = userProfile.getUUID();
 //                long id = userProfile.getId();
-//
-//                Log.e("Profile : ", nickname + "");
-//                Log.e("Profile : ", profileImagePath  + "");
-//                Log.e("Profile : ", thumnailPath + "");
-//                Log.e("Profile : ", id + "");
 
             }
             // 사용자 정보 요청 실패

@@ -47,7 +47,6 @@ public class BoardView extends Fragment {
                     for (int i = 0; i < list.length(); i++) {
                         JSONObject item = list.getJSONObject(i);
                         if (food.equals(item.getString("글 제목"))){
-                            Log.i("dd", item.getString("글 제목"));
                             board_name.setText(item.getString("글 제목"));
                             board_title.setText(item.getString("재료"));
                             board_content.setText(item.getString("만드는법"));
